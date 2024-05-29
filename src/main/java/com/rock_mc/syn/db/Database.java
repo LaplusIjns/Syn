@@ -48,5 +48,4 @@ public abstract class Database {
     public abstract PlayerInfo getPlayerByName(String playerName);
 
     public abstract int countCode();
-
 }
