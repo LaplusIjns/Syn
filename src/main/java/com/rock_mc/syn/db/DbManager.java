@@ -175,4 +175,10 @@ public class DbManager {
             return this.database.getPlayerByName(playerName);
         }
     }
+
+    public int countCode()  {
+        synchronized (lock) {
+            return this.database.countCode();
+        }
+    }
 }

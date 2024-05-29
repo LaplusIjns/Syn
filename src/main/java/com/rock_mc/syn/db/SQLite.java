@@ -427,4 +427,20 @@ public class SQLite extends Database {
         // Close the database connection
         // No need to implement this method for SQLite
     }
+
+
+    @Override
+    public int countCode() {
+        try (Connection connection = getConnection()) {
+            PreparedStatement statement = connection.prepareStatement("SELECT count(*) as c FROM verification_codes ");
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt("c");
+            }
+        } catch (SQLException e) {
+            LOG_PLUGIN.logWarning("Could not get the number of code: " + e.getMessage());
+        }
+        return -1;
+    }
+
 }

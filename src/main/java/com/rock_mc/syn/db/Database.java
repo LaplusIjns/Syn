@@ -46,4 +46,7 @@ public abstract class Database {
     public abstract void updateFailedAttempts(String playerUUID, int failedAttempts);
 
     public abstract PlayerInfo getPlayerByName(String playerName);
+
+    public abstract int countCode();
+
 }
